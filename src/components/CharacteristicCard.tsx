@@ -44,7 +44,7 @@ const CharacteristicCard = ({ char }: CharacteristicCardProps) => {
   const writeCharacteristic = () => {
     // encode the string with the Base64 algorythm
     char
-      .writeWithResponse(Base64.encode('6'))
+      .writeWithResponse(Base64.encode('fff'))
       .then(() => {
         console.warn('Success');
       })
@@ -58,6 +58,9 @@ const CharacteristicCard = ({ char }: CharacteristicCardProps) => {
       onPress={writeCharacteristic}>
       <Text style={styles.measure}>{measure}</Text>
       <Text style={styles.descriptor}>{descriptor}</Text>
+      <Text>{`UUID : ${char.uuid}`}</Text>
+      {/* <Text>{`read : ${char.id}`}</Text> */}
+      <Text>{`Value (Base64/Decoded) : ${char.value} / ${Base64.decode(char.value) } `}</Text>
       <Text>{`isIndicatable : ${char.isIndicatable}`}</Text>
       <Text>{`isNotifiable : ${char.isNotifiable}`}</Text>
       <Text>{`isNotifying : ${char.isNotifying}`}</Text>

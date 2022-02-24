@@ -49,7 +49,7 @@ const HomeScreen = () => {
     setIsLoading(true);
 
     // scan devices
-    manager.startDeviceScan(null, null, (error, scannedDevice) => {
+    manager.startDeviceScan(["02db48f2-850f-11ec-a8a3-0242ac120002"], null, (error, scannedDevice) => {
       if (error) {
         console.warn(error);
       }
